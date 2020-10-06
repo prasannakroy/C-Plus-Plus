@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<climits>
 using namespace std;
 
 #define parent(idx) ((idx - 1) >> 1)
@@ -7,7 +9,7 @@ using namespace std;
 
 // Binary Heap implementation
 
-// Min Heap
+// Max Heap
 template<typename t> 
 class MaxHeap {
 public:
@@ -64,7 +66,7 @@ public:
             return;
         }
 
-        heap[idx] = LLONG_MAX; // Change value of index to minimum value
+        heap[idx] = INT_MAX; // Change value of index to minimum value
         upHeapify(idx); // Balance the tree
         remove(); // Now as the root is minimum, balance the tree
     }
@@ -110,3 +112,18 @@ signed main() {
     for (int i = 1; i <= t; /*cout << "Case " << i << ": ",*/ solve(), i++);
     return 0;
 }
+
+/*
+Test Cases
+10
+Insert 5
+Insert 10
+Insert 2
+Insert 15
+Delete 0
+Insert 25
+Delete 2
+Insert 12
+Insert 11
+Display
+*/
